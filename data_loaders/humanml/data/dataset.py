@@ -334,7 +334,7 @@ class Text2MotionDatasetV2(data.Dataset):
                     length_list.append(len(motion))
             except:
                 pass
-
+        breakpoint()
         name_list, length_list = zip(
             *sorted(zip(new_name_list, length_list), key=lambda x: x[1]))
 
@@ -616,7 +616,6 @@ class Text2MotionDatasetBaseline(data.Dataset):
                     length_list.append(len(motion))
             except:
                 pass
-        breakpoint()
         name_list, length_list = zip(
             *sorted(zip(new_name_list, length_list), key=lambda x: x[1]))
 
