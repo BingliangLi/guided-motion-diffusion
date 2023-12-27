@@ -485,7 +485,7 @@ class CompMDMGeneratedDatasetCondition(Dataset):
                 gt_skel_motions = motion_model.rot2xyz(x=gt_skel_motions, mask=None, pose_rep='xyz', glob=True, translation=True, 
                                                     jointstype='smpl', vertstrans=True, betas=None, beta=0, glob_rot=None, get_rotations_back=False)
                 # gt_skel_motions shape [32, 22, 3, 196]
-                # # Visualize to make sure it is correct
+                # # Visualize to make sure it is correct # TODO
                 # from data_loaders.humanml.utils.plot_script import plot_3d_motion
                 # plot_3d_motion("./test_positions_1.mp4", self.dataset.kinematic_chain, 
                 #                gt_skel_motions[0].permute(2,0,1).detach().cpu().numpy(), 'title', 'humanml', fps=20)
