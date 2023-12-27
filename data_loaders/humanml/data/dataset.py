@@ -279,7 +279,7 @@ class Text2MotionDatasetV2(data.Dataset):
         for name in tqdm(id_list):
             try:
                 # if True:
-                # breakpoint()
+                breakpoint()
                 motion = np.load(pjoin(opt.motion_dir, name + '.npy'))
                 if (len(motion)) < min_motion_len or (len(motion) >= 200):
                     continue
@@ -335,7 +335,7 @@ class Text2MotionDatasetV2(data.Dataset):
                     length_list.append(len(motion))
             except:
                 pass
-        # breakpoint()
+        breakpoint()
         name_list, length_list = zip(
             *sorted(zip(new_name_list, length_list), key=lambda x: x[1]))
 
