@@ -138,3 +138,6 @@ assets/
 body_models/
 .vscode/
 dataset/HumanML3D_abs/cal_mean_variance.ipynb
+dataset
+dataset_bkup/
+dataset_bkup
