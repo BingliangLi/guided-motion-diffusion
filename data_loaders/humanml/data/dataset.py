@@ -279,7 +279,7 @@ class Text2MotionDatasetV2(data.Dataset):
         for name in tqdm(id_list):
             try:
                 # if True:
-                breakpoint()
+                # breakpoint()
                 motion = np.load(pjoin(opt.motion_dir, name + '.npy'))
                 if (len(motion)) < min_motion_len or (len(motion) >= 200):
                     continue
@@ -1042,7 +1042,7 @@ class HumanML3D(data.Dataset):
         self.dataname = 't2m'
 
         # Configurations of T2M dataset and KIT dataset is almost the same
-        abs_base_path = '' # FIX used to be '.'
+        abs_base_path = '.' # FIX used to be '.'
         dataset_opt_path = pjoin(abs_base_path, datapath)
         device = None  # torch.device('cuda:4') # This param is not in use in this context
         # TODO: modernize get_opt
