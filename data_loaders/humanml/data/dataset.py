@@ -103,6 +103,7 @@ class Text2MotionDataset(data.Dataset):
 
         name_list, length_list = zip(
             *sorted(zip(new_name_list, length_list), key=lambda x: x[1]))
+        breakpoint()
 
         if opt.is_train:
             # root_rot_velocity (B, seq_len, 1)
