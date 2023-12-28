@@ -103,7 +103,7 @@ class Text2MotionDataset(data.Dataset):
 
         name_list, length_list = zip(
             *sorted(zip(new_name_list, length_list), key=lambda x: x[1]))
-        breakpoint()
+        # breakpoint()
 
         if opt.is_train:
             # root_rot_velocity (B, seq_len, 1)
@@ -288,6 +288,7 @@ class Text2MotionDatasetV2(data.Dataset):
                 flag = False
                 with cs.open(pjoin(opt.text_dir, name + '.txt')) as f:
                     for line in f.readlines():
+                        # breakpoint()
                         text_dict = {}
                         line_split = line.strip().split('#')
                         caption = line_split[0]
@@ -336,7 +337,7 @@ class Text2MotionDatasetV2(data.Dataset):
                     length_list.append(len(motion))
             except:
                 pass
-        breakpoint()
+        # breakpoint()
         name_list, length_list = zip(
             *sorted(zip(new_name_list, length_list), key=lambda x: x[1]))
 
