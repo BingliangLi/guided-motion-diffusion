@@ -108,6 +108,7 @@ def evaluate_fid(eval_wrapper, groundtruth_loader, activation_dict, file):
     for model_name, motion_embeddings in activation_dict.items():
         mu, cov = calculate_activation_statistics(motion_embeddings)
         # print(mu)
+        breakpoint()
         fid = calculate_frechet_distance(gt_mu, gt_cov, mu, cov)
         print(f'---> [{model_name}] FID: {fid:.4f}')
         print(f'---> [{model_name}] FID: {fid:.4f}', file=file, flush=True)
