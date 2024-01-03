@@ -49,7 +49,6 @@ def get_opt(opt_path, device, mode, max_motion_length, use_abs3d=False):
                 else:
                     opt_dict[key] = str(value)
 
-    pprint(opt)
     opt_dict['which_epoch'] = 'latest'
     opt.save_root = pjoin(opt.checkpoints_dir, opt.dataset_name, opt.name)
     opt.model_dir = pjoin(opt.save_root, 'model')
@@ -90,4 +89,6 @@ def get_opt(opt_path, device, mode, max_motion_length, use_abs3d=False):
     opt.is_continue = False
     opt.device = device
 
+    pprint(dict(opt))
+    
     return opt
