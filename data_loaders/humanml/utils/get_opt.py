@@ -89,6 +89,6 @@ def get_opt(opt_path, device, mode, max_motion_length, use_abs3d=False):
     opt.is_continue = False
     opt.device = device
 
-    pprint(dict(opt))
+    pprint(opt)
     
     return opt
