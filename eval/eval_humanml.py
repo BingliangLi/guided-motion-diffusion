@@ -97,11 +97,12 @@ def evaluate_fid(eval_wrapper, groundtruth_loader, activation_dict, file):
     print('========== Evaluating FID ==========')
     with torch.no_grad():
         for idx, batch in enumerate(groundtruth_loader):
+            breakpoint()
             _, _, _, sent_lens, motions, m_lens, _ = batch
             motion_embeddings = eval_wrapper.get_motion_embeddings(
                 motions=motions, m_lens=m_lens)
             gt_motion_embeddings.append(motion_embeddings.cpu().numpy())
-    gt_motion_embeddings = np.concatenate(gt_motion_embeddings, axis=0)
+    gt_motion_embeddings = np.concatenate(z, axis=0)
     gt_mu, gt_cov = calculate_activation_statistics(gt_motion_embeddings)
 
     # print(gt_mu)
