@@ -3,6 +3,7 @@ from argparse import Namespace
 import re
 from os.path import join as pjoin
 from data_loaders.humanml.utils.word_vectorizer import POS_enumerator
+from pprint import pprint
 
 
 def is_float(numStr):
@@ -48,7 +49,7 @@ def get_opt(opt_path, device, mode, max_motion_length, use_abs3d=False):
                 else:
                     opt_dict[key] = str(value)
 
-    # print(opt)
+    pprint(opt)
     opt_dict['which_epoch'] = 'latest'
     opt.save_root = pjoin(opt.checkpoints_dir, opt.dataset_name, opt.name)
     opt.model_dir = pjoin(opt.save_root, 'model')
