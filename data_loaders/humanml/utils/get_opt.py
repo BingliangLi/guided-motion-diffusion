@@ -61,8 +61,10 @@ def get_opt(opt_path, device, mode, max_motion_length, use_abs3d=False):
         if use_abs3d and mode not in ['eval', 'gt']:
             # Will load the original dataset (relative) if in 'eval' or 'gt' mode
             opt.motion_dir = pjoin(opt.data_root, 'new_joint_vecs_abs_3d')
+            print('WARNING: Using absolute 3D coordinates')
         else:
             opt.motion_dir = pjoin(opt.data_root, 'new_joint_vecs') 
+            print('WARNING: Using relative 3D coordinates')
         
         opt.text_dir = pjoin(opt.data_root, 'texts')
         opt.joints_num = 22
